@@ -1,4 +1,4 @@
 # messaging-service-second-memory
 
-Сервис по отправке сообщений на почту. Является частью проекта «Вторая память».
-[https://github.com/DmitryBobryakov/Second-Memory-remastered](Ссылка на основной репозиторий)
+Сервис по отправке сообщений на почту. Является частью проекта «Вторая память». <br >
+[Ссылка на основной репозиторий](https://github.com/DmitryBobryakov/Second-Memory-remastered)
