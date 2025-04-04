@@ -1,15 +1,9 @@
-package mipt.app.message_service.strategy;
+package mipt.app.messagenotification.email;
 
-import mipt.app.message_service.dto.MessageType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeletionEmailStrategy implements EmailContentStrategy {
-  @Override
-  public MessageType getType() {
-    return MessageType.DELETION;
-  }
-
+public class DeletionEmailContent implements EmailContent {
   @Override
   public String getSubject() {
     return "We’re sad to see you go";

@@ -1,4 +1,4 @@
-package mipt.app.message_service;
+package mipt.app.messagenotification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

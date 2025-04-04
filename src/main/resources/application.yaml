@@ -1,24 +1,26 @@
 spring:
+  profiles:
+    active: local
   application:
     name: message-service
   kafka:
-    bootstrap-servers: localhost:29093
+    bootstrap-servers: ${kafka-bootstrap-servers}
     consumer:
-      group-id: service-group
+      group-id: notification-group
       enable-auto-commit: true
   mail:
-    host: smtp.gmail.com
+    host: ${mail-host}
     port: 587
-    username: ${username}
-    password: ${password}
+    username: ${mail-username}
+    password: ${mail-password}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
-topic-to-consume-message: user-topic
+topic-to-consume-message: events-topic
 server:
-  port: 8084
+  port: ${server-port}
 
 

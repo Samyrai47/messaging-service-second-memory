@@ -1,11 +1,13 @@
-package mipt.app.message_service.dto;
+package mipt.app.messagenotification.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class DtoMessage {
+@NoArgsConstructor
+public class MessageDto {
   String email;
   String username;
   MessageType type;

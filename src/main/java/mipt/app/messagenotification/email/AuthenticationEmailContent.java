@@ -1,15 +1,9 @@
-package mipt.app.message_service.strategy;
+package mipt.app.messagenotification.email;
 
-import mipt.app.message_service.dto.MessageType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthenticationEmailStrategy implements EmailContentStrategy {
-  @Override
-  public MessageType getType() {
-    return MessageType.AUTHENTICATION;
-  }
-
+public class AuthenticationEmailContent implements EmailContent {
   @Override
   public String getSubject() {
     return "Login into Second Memory";

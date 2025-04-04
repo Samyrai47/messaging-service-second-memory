@@ -1,4 +1,4 @@
-package mipt.app.message_service.dto;
+package mipt.app.messagenotification.dto;
 
 public enum MessageType {
   REGISTRATION,
