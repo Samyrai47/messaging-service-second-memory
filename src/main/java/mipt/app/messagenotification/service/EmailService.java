@@ -3,8 +3,8 @@ package mipt.app.messagenotification.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mipt.app.messagenotification.dto.MessageDto;
+import mipt.app.messagenotification.dto.MessageType;
 import mipt.app.messagenotification.email.EmailContent;
-import mipt.app.messagenotification.factory.EmailContentFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailService {
   private final JavaMailSender emailSender;
-  private final EmailContentFactory emailContentFactory;
+
   @Value("${spring.mail.username}")
   private String fromEmail;
 
   public SimpleMailMessage sendEmail(MessageDto parsedMessage) {
-    EmailContent content = emailContentFactory.getContent(parsedMessage.getType());
+    EmailContent content = MessageType.getStrategy(parsedMessage.getType());
     SimpleMailMessage message = new SimpleMailMessage();
     message.setFrom(fromEmail);
     message.setTo(parsedMessage.getEmail());
