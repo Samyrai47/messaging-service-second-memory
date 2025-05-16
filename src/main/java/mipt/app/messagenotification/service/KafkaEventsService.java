@@ -2,6 +2,7 @@ package mipt.app.messagenotification.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mipt.app.messagenotification.dto.MessageDto;
@@ -25,7 +26,7 @@ public class KafkaEventsService {
       dltStrategy = DltStrategy.FAIL_ON_ERROR,
       include = MailException.class)
   @KafkaListener(topics = {"${topic-to-consume-message}"})
-  public void consumeMessage(String message) {
+  public void consumeMessage(String message) throws MessagingException {
     try {
       MessageDto parsedMessage = objectMapper.readValue(message, MessageDto.class);
       log.debug("Retrieved message {}", message);
