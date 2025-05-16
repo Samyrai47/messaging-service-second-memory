@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 public class AuthenticationEmailContent implements EmailContent {
   @Override
   public String getSubject() {
-    return "Login into Second Memory";
+    return "Вход в ваш аккаунт";
   }
 
   @Override
   public String getText(String name) {
-    return "Dear " + name + ", we detected a login into your account.";
+    return name + ", кто-то вошел в ваш аккаунт. Если это были вы: рады вас видеть вновь!";
   }
 }
